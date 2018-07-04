@@ -98,7 +98,7 @@ if (message.content == ("hola")) {
     message.channel.send("que onda con el pacman >:v");
   } else
 
-  if (message.content.startsWith(prefix + "Razz")) {
+  if (command === "Razz") {
       
   if(cooldown.has(message.author.id)){
     message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
@@ -116,7 +116,7 @@ if (message.content == ("hola")) {
     message.channel.send("**Bbneko**. Razz x Ana es real uwu");
   } else
 
-  if (message.content.startsWith(prefix + "Kevin")) {
+  if (command === "Kevin") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -133,7 +133,7 @@ if (message.content == ("hola")) {
     message.channel.send("**Soy un niño rainbol dijo el kewin :rainbow:**");
   } else
 
-  if (message.content.startsWith(prefix + "Ge-ese")) {
+  if (command === "Ge-ese") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -150,7 +150,7 @@ if (message.content == ("hola")) {
     message.channel.send("**La money hace al cabaiero**");
   } else
 
-  if (message.content.startsWith(prefix + "Xiomii")) {
+  if (command === "Xiomii") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -167,7 +167,7 @@ if (message.content == ("hola")) {
     message.channel.send("**Miau** :3 <a:Pandita:450363958881157120>");
   } else
 
-  if (message.content.startsWith(prefix + "Leann")) {
+  if (command === "Leann") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -184,7 +184,7 @@ if (message.content == ("hola")) {
     message.channel.send("**Leann la biblia**");
   } else
 
-  if (message.content.startsWith(prefix + "Ana")) {
+  if (command === "Ana") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -218,7 +218,7 @@ if (message.content == ("hola")) {
     message.channel.send(message.author.username+ " mas hermosa eres tu bb 7w7r");
   } else
 
-  if (message.content.startsWith(prefix + "Calamar")) {
+  if (command === "Calamar") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -235,7 +235,7 @@ if (message.content == ("hola")) {
     message.channel.send("._.     :|      .-.     |:");
   } else
 
-  if (message.content.startsWith(prefix + "Geo")) {
+  if (command === "Geo") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -252,7 +252,7 @@ if (message.content == ("hola")) {
     message.channel.send("<:rikolinho:415612971117576202> 7u");
   } else
 
-  if (message.content.startsWith(prefix + "Kuki")) {
+  if (command === "Kuki") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -269,7 +269,7 @@ if (message.content == ("hola")) {
     message.channel.send("Te wa a comer con un vaso de leshe tibia >:3");
   } else
 
-  if (message.content.startsWith(prefix + "Joshe")) {
+  if (command === "Joshe") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -286,7 +286,7 @@ if (message.content == ("hola")) {
     message.channel.send("**Para cuando Xiomii en featured >:v**");
   } else
 
-  if (message.content.startsWith(prefix + "Añan")) {
+  if (command === "Añan") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -303,7 +303,7 @@ if (message.content == ("hola")) {
     message.channel.send("La legendaria palta que llego a los 100 subs >:3 las paltas dominarán al mundo");
   } else
 
-  if (message.content.startsWith(prefix + "Javii")) {
+  if (command === "Javii") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -343,7 +343,7 @@ let user = message.mentions.users.first();
     message.channel.send(":white_check_mark: | El usuario " + user.username +" ha sido baneado con exito");
   } else
   
-  if (message.content.startsWith(prefix + "tags")) {
+  if (command === "tags") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -493,7 +493,7 @@ if(message.content.startsWith(prefix + 'help')){
   
 }
 
-if(message.content.startsWith(prefix + "test")) {
+if(command === "test")) {
   message.author.send("**ok**")
 }
 
@@ -587,7 +587,11 @@ if(command === '8ball'){
       
              /* if (message.mentions.users.first() === message.author) return message.channel.send(':)'); */ //esta línea es opcional, es si quieres que salga algo cuando se mencione el mismo..
              if (message.mentions.users.first() === message.author) return message.channel.send('c tomo una chocolatada -w-');
-              if (message.mentions.users.size < 1) return message.reply('c tomo una chocolatada -w-').catch(console.error); //Para que mencione a alguien.
+              if (message.mentions.users.size < 1) return               message.channel.send({
+                  embed: {
+                      description: message.author.username + " **se ha tomado una chocolatada** -w-",
+                      color: 15105570, //Puedes poner el color de tu preferencia.
+                  }.catch(console.error); //Para que mencione a alguien.
               message.channel.send({
                   embed: {
                       description: message.author.username + " **Le dio una chocolatada a** " + user.username + " uwu",
