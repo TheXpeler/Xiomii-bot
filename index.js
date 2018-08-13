@@ -113,7 +113,7 @@ if (message.content == ("hola")) {
    cooldown.delete(message.author.id);
  }, 10000);
 
-    message.channel.send("**Bbneko**. Razz x Ana es real uwu");
+    message.channel.send("**Bbneko** <:fap7u7:465161026795601930>");
   } else
 
   if (message.content.startsWith(prefix + "Kevin")) {
@@ -198,7 +198,7 @@ if (message.content == ("hola")) {
      cooldown.delete(message.author.id);
    }, 10000);
   
-    message.channel.send("Ana-Chan x Razz es real uwu");
+    message.channel.send(":snowflake:");
   } else
 
   if (message.content.startsWith("hermosa")) {
@@ -317,7 +317,7 @@ if (message.content == ("hola")) {
      cooldown.delete(message.author.id);
    }, 10000);
   
-    message.channel.send("?warn @itsjavii11 por subido >:c                                                                           Pasate Hypersonic xdd");
+    message.channel.send("?warn @itsjavii11 por subido >:c                                                                           Pasate... no se xd");
   } else
 
   if (command === "ban") {
@@ -340,7 +340,48 @@ let user = message.mentions.users.first();
     message.channel.send("<:ban:422266423902076959> | Menciona a alguien para banear 7u")
   }else
 
-    message.channel.send(":white_check_mark: | El usuario " + user.username +" ha sido baneado con exito");
+ if (command === "warn"){
+    if(cooldown.has(message.author.id)){
+      message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
+      return;
+   }
+   //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
+   //no pueda utilizar el comando durante 10 segundos.
+   cooldown.add(message.author.id);
+   
+   //Quita al usuario del enfriamiento después de pasar los 10 segundos.
+   setTimeout(() => {
+     cooldown.delete(message.author.id);
+   }, 10000);
+
+let mention = message.mentions.members.first();
+let user = message.mentions.users.first();
+  if(mention == null) {
+    message.channel.send(":warning: | Menciona a alguien para warnear 7u");
+  }else
+
+     if (command === "cookie"){
+    if(cooldown.has(message.author.id)){
+      message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
+      return;
+   }
+   //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
+   //no pueda utilizar el comando durante 10 segundos.
+   cooldown.add(message.author.id);
+   
+   //Quita al usuario del enfriamiento después de pasar los 10 segundos.
+   setTimeout(() => {
+     cooldown.delete(message.author.id);
+   }, 10000);
+
+let mention = message.mentions.members.first();
+let user = message.mentions.users.first();
+  if(mention == null) {
+    message.channel.send("cookie: | Menciona a alguien para darle una galleta uwu");
+  }else
+
+    
+    message.channel.send(":cookie: |" message.author.username + " le ha dado una galleta a" + user.username + " uwu");
   } else
   
   if (message.content.startsWith(prefix + "tags")) {
