@@ -1,14 +1,15 @@
-const Discord = require("discord.js");
+﻿const Discord = require("discord.js");
+const { Client } = require('discord.js');
 const client = new Discord.Client();
 const config = require("./config.json");
-const ytdl = require('ytdl-core');
-const economy = require('discord-eco')
+const yt = require('ytdl-core');
+const token = require('./config.json');
 
 var prefix = config.prefix;
 let cooldown= new Set();
 function jugandoa(){
   let elementos = ['Ser un bot', 'hacer cosas de bots','directo morido', 'ser Xiomii', 'Clubstep', 'los naipes', 'Ser manoseada por mi creador ;-;','Mirar a la nada pensando en todo','Suplantar a Xiomii','Ser Xiomih Ele Peh','Tomar awa helada','hacer cosas de Xiomii','dormir calentita en mi camita uwu','ZzZzZzZzZz','awa','ewe','uwu','matar dedos xd','Miauxd','Lalalalalalala','Escuchar música uwu','Geometry Dash'];
-
+  
       client.user.setPresence({
           game: {
               name: elementos[Math.floor(elementos.length * Math.random())],url: "https://www.twitch.tv/xiomiilp",
@@ -16,7 +17,7 @@ function jugandoa(){
       });
   }
   setInterval(jugandoa, 60000);
-
+  
 client.on("ready" ,() => {
     console.log("El bot esta listo")
 });
@@ -30,19 +31,19 @@ if (command === 'ping') {
 
   let mensajes = Date.now() - message.createdTimestamp;
   let ping = Math.floor(message.client.ping);
-
+  
   message.channel.send(":ping_pong: Pong!")
     .then(m => {
 
         m.edit(`:incoming_envelope: Ping Mensajes: \`${Math.floor(mensajes/100)} ms\`\n:satellite_orbital: Ping DiscordAPI: \`${ping} ms\``);
-
+    
     });
   }
 
   if (message.content == ("Hola")) {
     message.channel.send("Holii n.n bienvenid@! :smile:");
   } else
-
+  
 if (message.content == ("hola")) {
     if(cooldown.has(message.author.id)){
         message.channel.send();
@@ -51,12 +52,12 @@ if (message.content == ("hola")) {
      //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
      //no pueda utilizar el comando durante 10 segundos.
      cooldown.add(message.author.id);
-
+     
      //Quita al usuario del enfriamiento después de pasar los 10 segundos.
      setTimeout(() => {
        cooldown.delete(message.author.id);
      }, 10000);
-
+    
   message.channel.send("Holii n.n bienvenid@! :smile:");
 } else
 
@@ -70,7 +71,7 @@ if (message.content == ("hola")) {
      //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
      //no pueda utilizar el comando durante 10 segundos.
      cooldown.add(message.author.id);
-
+     
      //Quita al usuario del enfriamiento después de pasar los 10 segundos.
      setTimeout(() => {
        cooldown.delete(message.author.id);
@@ -81,7 +82,7 @@ if (message.content == ("hola")) {
 
 
    if (message.content == ("v:")) {
-
+       
     if(cooldown.has(message.author.id)){
         message.channel.send();
         return;
@@ -89,7 +90,7 @@ if (message.content == ("hola")) {
      //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
      //no pueda utilizar el comando durante 10 segundos.
      cooldown.add(message.author.id);
-
+     
      //Quita al usuario del enfriamiento después de pasar los 10 segundos.
      setTimeout(() => {
        cooldown.delete(message.author.id);
@@ -99,7 +100,7 @@ if (message.content == ("hola")) {
   } else
 
   if (message.content.startsWith(prefix + "Razz")) {
-
+      
   if(cooldown.has(message.author.id)){
     message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
     return;
@@ -107,13 +108,13 @@ if (message.content == ("hola")) {
  //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
  //no pueda utilizar el comando durante 10 segundos.
  cooldown.add(message.author.id);
-
+ 
  //Quita al usuario del enfriamiento después de pasar los 10 segundos.
  setTimeout(() => {
    cooldown.delete(message.author.id);
  }, 10000);
 
-    message.channel.send("**Bbneko** <:fap7u7:465161026795601930>");
+    message.channel.send("**Bbneko**. Razz x Ana es real uwu");
   } else
 
   if (message.content.startsWith(prefix + "Kevin")) {
@@ -124,12 +125,12 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
+  
     message.channel.send("**Soy un niño rainbol dijo el kewin :rainbow:**");
   } else
 
@@ -141,12 +142,12 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
+  
     message.channel.send("**La money hace al cabaiero**");
   } else
 
@@ -158,12 +159,12 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
+  
     message.channel.send("**Miau** :3 <a:Pandita:450363958881157120>");
   } else
 
@@ -175,12 +176,12 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
+  
     message.channel.send("**Leann la biblia**");
   } else
 
@@ -192,13 +193,13 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
-    message.channel.send(":snowflake:");
+  
+    message.channel.send(":snowflake:.");
   } else
 
   if (message.content.startsWith("hermosa")) {
@@ -209,12 +210,12 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
+  
     message.channel.send(message.author.username+ " mas hermosa eres tu bb 7w7r");
   } else
 
@@ -226,12 +227,12 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
+  
     message.channel.send("._.     :|      .-.     |:");
   } else
 
@@ -243,12 +244,12 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
+  
     message.channel.send("<:rikolinho:415612971117576202> 7u");
   } else
 
@@ -260,12 +261,12 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
+  
     message.channel.send("Te wa a comer con un vaso de leshe tibia >:3");
   } else
 
@@ -277,12 +278,12 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
+  
     message.channel.send("**Para cuando Xiomii en featured >:v**");
   } else
 
@@ -294,12 +295,12 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
+  
     message.channel.send("La legendaria palta que llego a los 100 subs >:3 las paltas dominarán al mundo");
   } else
 
@@ -311,13 +312,13 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
-    message.channel.send("?warn @itsjavii11 por subido >:c                                                                           Pasate... no se xd");
+  
+    message.channel.send("?warn @itsjavii11 por subido >:c                                                                           Pasate Hypersonic xdd");
   } else
 
   if (command === "ban") {
@@ -328,7 +329,7 @@ if (message.content == ("hola")) {
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
@@ -340,7 +341,10 @@ let user = message.mentions.users.first();
     message.channel.send("<:ban:422266423902076959> | Menciona a alguien para banear 7u")
   }else
 
- if (command === "warn"){
+    message.channel.send(":white_check_mark: | El usuario " + user.username +" ha sido baneado con exito");
+  } else
+
+  if (command === "warn") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -348,7 +352,7 @@ let user = message.mentions.users.first();
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
@@ -357,10 +361,13 @@ let user = message.mentions.users.first();
 let mention = message.mentions.members.first();
 let user = message.mentions.users.first();
   if(mention == null) {
-    message.channel.send(":warning: | Menciona a alguien para warnear 7u");
+    message.channel.send(":warning: | Menciona a alguien para warnear 7u")
   }else
 
-     if (command === "cookie"){
+    message.channel.send(":white_check_mark: | El usuario " + user.username +" ha sido warneado con exito");
+  } else
+  
+  if (command === "kick") {
     if(cooldown.has(message.author.id)){
       message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
@@ -368,7 +375,7 @@ let user = message.mentions.users.first();
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
@@ -377,27 +384,46 @@ let user = message.mentions.users.first();
 let mention = message.mentions.members.first();
 let user = message.mentions.users.first();
   if(mention == null) {
-    message.channel.send("cookie: | Menciona a alguien para darle una galleta uwu");
+    message.channel.send(":boot: | Menciona a alguien para kickear 7u")}
   }else
 
+  if (command === "cookie") {
+    if(cooldown.has(message.author.id)){
+      message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
+      return;
+   }
+   //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
+   //no pueda utilizar el comando durante 10 segundos.
+   cooldown.add(message.author.id);
+   
+   //Quita al usuario del enfriamiento después de pasar los 10 segundos.
+   setTimeout(() => {
+     cooldown.delete(message.author.id);
+   }, 10000);
 
-    message.channel.send(":cookie: |" + message.author.username + " le ha dado una galleta a" + user.username + " uwu");
+let mention = message.mentions.members.first();
+let user = message.mentions.users.first();
+  if(mention == null) {
+    message.channel.send(":cookie: | Dale una galleta a una personita especial uwu")
+  }else
+
+    message.channel.send(":cookie: | " + message.author.username + " le ha dado una galleta a " + user.username + " <a:uwu:478391876597317632>");
   } else
 
   if (message.content.startsWith(prefix + "tags")) {
     if(cooldown.has(message.author.id)){
-      message.channel.send(message.author.username + " utilice el comando despues de 10 segundos!");
+      message.channel.send(message.author.username+ " utilice el comando despues de 10 segundos!");
       return;
    }
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
+  
     message.channel.send(message.author.username +", ``tags`` is temporarily disabled!");
   } else
 
@@ -459,7 +485,7 @@ if(command === 'user'){
   let userm = message.mentions.users.first()
   if(!userm){
     var user = message.author;
-
+    
       const embed = new Discord.RichEmbed()
       .setThumbnail(user.avatarURL)
       .setAuthor(user.username+'#'+user.discriminator, user.avatarURL)
@@ -471,7 +497,7 @@ if(command === 'user'){
       .addField('Fecha de Ingreso', message.member.joinedAt.toDateString())
       .addField('Roles', message.member.roles.map(roles => `\`${roles.name}\``).join(', '))
       .setColor(0x66b3ff)
-
+      
      message.channel.send({ embed });
   }else{
     const embed = new Discord.RichEmbed()
@@ -482,10 +508,10 @@ if(command === 'user'){
     .addField('Estado', userm.presence.status, true)
     .addField('Cuenta Creada', userm.createdAt.toDateString(), true)
     .setColor(0x66b3ff)
-
+    
    message.channel.send({ embed });
   }
-
+  
 }
 if(command === 'server'){
 
@@ -501,7 +527,7 @@ if(command === 'server'){
   .addField('Miembros', server.memberCount, true)
   .addField('Roles', server.roles.size, true)
   .setColor(0x66b3ff)
-
+  
  message.channel.send({ embed });
 
 }
@@ -531,7 +557,7 @@ if(message.content.startsWith(prefix + 'help')){
                       '-> '+prefix+'Calamar        :: Comando especial 7u7\n'+
                       '-> hola                     :: Retorna un saludo como mensaje.\n```\n\n'+
                       '**Unete al server de discord de Xiomii n.n/ **\nhttps://discord.gg/bnJ8MDM');
-
+  
 }
 
 if(message.content.startsWith(prefix + "test")) {
@@ -571,7 +597,7 @@ if(command === '8ball'){
 
 }
 
-
+ 
 
       if(command === 'hug'){
 
@@ -582,7 +608,7 @@ if(command === '8ball'){
  //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
  //no pueda utilizar el comando durante 10 segundos.
  cooldown.add(message.author.id);
-
+ 
  //Quita al usuario del enfriamiento después de pasar los 10 segundos.
  setTimeout(() => {
    cooldown.delete(message.author.id);
@@ -616,26 +642,57 @@ if(command === '8ball'){
        //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
        //no pueda utilizar el comando durante 10 segundos.
        cooldown.add(message.author.id);
-
+       
        //Quita al usuario del enfriamiento después de pasar los 10 segundos.
        setTimeout(() => {
          cooldown.delete(message.author.id);
        }, 10000);
-
+        
         let user = message.mentions.users.first();
               const gifs =
                   ['https://m.popkey.co/fca5d5/bXDgV.gif','','https://media.giphy.com/media/QFPoctlgZ5s0E/giphy.gif','https://media1.tenor.com/images/b0de026a12e20137a654b5e2e65e2aed/tenor.gif?itemid=7552093','https://i.pinimg.com/originals/34/79/07/347907b29298c58cc6093c650b3b5ec8.gif','http://i68.tinypic.com/sm4mmw.gif','https://media.giphy.com/media/QFPoctlgZ5s0E/giphy.gif','https://media.giphy.com/media/pHllRX210dKjS/source.gif','http://nocturnal-romance.net/galeria/sr5.gif','https://78.media.tumblr.com/a8d7e72935a362df266573c3056da306/tumblr_olmh4wPiMn1slt45io1_250.gif','https://s3.favim.com/orig/151124/anime-couple-cry-gif-Favim.com-3637833.gif', 'https://thumbs.gfycat.com/AlienatedUnawareArcherfish-max-1mb.gif', 'https://i.pinimg.com/originals/c5/85/27/c58527caa736f8d5ce4ab6ee6e3f736b.gif', 'https://vignette.wikia.nocookie.net/degrassi/images/f/f1/Asuna_hugs_Kirito.gif/revision/latest?cb=20141016013927', 'https://2.bp.blogspot.com/-XPqck-C979s/V-QbRIOoqbI/AAAAAAAADzM/seUBJKyKCiQ5W2kScB627WjcKU5Pq1VKwCLcB/s1600/chuunibyou.gif' ,'https://78.media.tumblr.com/28e86413485a973ae859a745a7a5382e/tumblr_o1hf0uK2NL1uapp8co1_500.gif' ,'http://i.imgur.com/pME21N2.gif', 'https://thumbs.gfycat.com/FastNegligibleDuck-max-1mb.gif', 'http://s.orzzzz.com/news/85/c2/586606ec10e31.gif', 'https://data.whicdn.com/images/203117037/original.gif'];
-
+      
              /* if (message.mentions.users.first() === message.author) return message.channel.send(':)'); */ //esta línea es opcional, es si quieres que salga algo cuando se mencione el mismo..
-             if (message.mentions.users.first() === message.author) return message.channel.send('c tomo una chocolatada -w-');
-              if (message.mentions.users.size < 1) return message.reply('c tomo una chocolatada -w-').catch(console.error); //Para que mencione a alguien.
-              message.channel.send({
-                  embed: {
-                      description: message.author.username + " **Le dio una chocolatada a** " + user.username + " uwu",
-                      color: 15105570, //Puedes poner el color de tu preferencia.
-                  }
-              })
-            }
+             if (message.mentions.users.first() === message.author) return message.channel.send
+
+             ({embed: {
+              color: 3447003,
+              author: {
+                name: client.user.username,
+                icon_url: client.user.avatarURL,
+                url: "https://cdn.discordapp.com/emojis/418456126699601942.gif?v=1",
+              },
+              description: "**te has tomado una chocolatada**",
+              url: "https://cdn.discordapp.com/emojis/418456126699601942.gif?v=1",
+            },
+          });
+
+              if (message.mentions.users.size < 1) return message.reply({embed: {
+        color: 3447003,
+        author: {
+          name: client.user.username,
+          icon_url: client.user.avatarURL,
+          url: "https://cdn.discordapp.com/emojis/418456126699601942.gif?v=1",
+        },
+        description: "**c tomo una chocolatada**",
+        url: "https://cdn.discordapp.com/emojis/418456126699601942.gif?v=1",
+      },
+
+    }).catch(console.error); //Para que mencione a alguien.
+              if (message.mentions.users.size == 1){
+              message.channel.send({embed: {
+                color: 3447003,
+                author: {
+                  name: client.user.username,
+                  icon_url: client.user.avatarURL,
+                  url: "https://cdn.discordapp.com/emojis/418456126699601942.gif?v=1",
+                },
+                description: message.author.username + "** le dio una chocolatada a **" + user.username,
+                url: "https://cdn.discordapp.com/emojis/418456126699601942.gif?v=1",
+              },
+            })
+          }
+        }
       if(command === 'kiss'){
 
         if(cooldown.has(message.author.id)){
@@ -645,12 +702,12 @@ if(command === '8ball'){
        //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
        //no pueda utilizar el comando durante 10 segundos.
        cooldown.add(message.author.id);
-
+       
        //Quita al usuario del enfriamiento después de pasar los 10 segundos.
        setTimeout(() => {
          cooldown.delete(message.author.id);
        }, 10000);
-
+      
 
         let user = message.mentions.users.first();
               const gifs =
@@ -689,7 +746,7 @@ if(command === '8ball'){
                 color: 15105570,
                 image: {
                     url: gifs[Math.floor(gifs.length * Math.random())]
-
+                    
                 }
             }
         });
@@ -704,12 +761,12 @@ if(command === '8ball'){
      //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
      //no pueda utilizar el comando durante 10 segundos.
      cooldown.add(message.author.id);
-
+     
      //Quita al usuario del enfriamiento después de pasar los 10 segundos.
      setTimeout(() => {
        cooldown.delete(message.author.id);
      }, 10000);
-
+    
 
       let user = message.mentions.users.first();
             const gifs =
@@ -734,12 +791,12 @@ if(command === 'cry'){
    //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
    //no pueda utilizar el comando durante 10 segundos.
    cooldown.add(message.author.id);
-
+   
    //Quita al usuario del enfriamiento después de pasar los 10 segundos.
    setTimeout(() => {
      cooldown.delete(message.author.id);
    }, 10000);
-
+  
 
     let user = message.mentions.users.first();
           const gifs =
@@ -764,12 +821,12 @@ if(command === 'cry'){
      //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
      //no pueda utilizar el comando durante 10 segundos.
      cooldown.add(message.author.id);
-
+     
      //Quita al usuario del enfriamiento después de pasar los 10 segundos.
      setTimeout(() => {
        cooldown.delete(message.author.id);
      }, 10000);
-
+    
 
       let user = message.mentions.users.first();
             const gifs =
@@ -796,19 +853,19 @@ if(command === 'cry'){
      //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
      //no pueda utilizar el comando durante 10 segundos.
      cooldown.add(message.author.id);
-
+     
      //Quita al usuario del enfriamiento después de pasar los 10 segundos.
      setTimeout(() => {
        cooldown.delete(message.author.id);
      }, 10000);
-
+    
 
     let users = message.mentions.users.map(m => m.username).join(' y ');
 if(!users) return message.channel.send('Mencione a dos usuarios para calcular');
-
+    
 const random = Math.floor(Math.random() * 100);
 let heard = "";
-
+ 
     if(random < 50){
         heard=':broken_heart:';
 
@@ -822,7 +879,7 @@ let heard = "";
         heard=':heart:';
 
     }
-
+            
 const embed = new Discord.RichEmbed()
     .setAuthor('El porcentaje de amor de '+users+' es:')
     .setDescription(heard+' **'+random+' %**'+' '+heard)
@@ -840,7 +897,7 @@ if(command === 'odio'){
  //Si no se encuentra dentro del enfriamiento, agrega al usuario para que
  //no pueda utilizar el comando durante 10 segundos.
  cooldown.add(message.author.id);
-
+ 
  //Quita al usuario del enfriamiento después de pasar los 10 segundos.
  setTimeout(() => {
    cooldown.delete(message.author.id);
@@ -905,6 +962,95 @@ if(!Canalvoz){
     }).catch(error => message.channel.send(error));
 
   }
-}
+}else
+const commands = {
+	'play': (msg) => {
+		if (queue[msg.guild.id] === undefined) return msg.channel.sendMessage(`Add some songs to the queue first with ${token.prefix}add`);
+		if (!msg.guild.voiceConnection) return commands.join(msg).then(() => commands.play(msg));
+		if (queue[msg.guild.id].playing) return msg.channel.sendMessage('Already Playing');
+		let dispatcher;
+		queue[msg.guild.id].playing = true;
+
+		console.log(queue);
+		(function play(song) {
+			console.log(song);
+			if (song === undefined) return msg.channel.sendMessage('Queue is empty').then(() => {
+				queue[msg.guild.id].playing = false;
+				msg.member.voiceChannel.leave();
+			});
+			msg.channel.sendMessage(`Playing: **${song.title}** as requested by: **${song.requester}**`);
+			dispatcher = msg.guild.voiceConnection.playStream(yt(song.url, { audioonly: true }), { passes : token.passes });
+			let collector = msg.channel.createCollector(m => m);
+			collector.on('message', m => {
+				if (m.content.startsWith(token.prefix + 'pause')) {
+					msg.channel.sendMessage('paused').then(() => {dispatcher.pause();});
+				} else if (m.content.startsWith(token.prefix + 'resume')){
+					msg.channel.sendMessage('resumed').then(() => {dispatcher.resume();});
+				} else if (m.content.startsWith(token.prefix + 'skip')){
+					msg.channel.sendMessage('skipped').then(() => {dispatcher.end();});
+				} else if (m.content.startsWith('volume+')){
+					if (Math.round(dispatcher.volume*50) >= 100) return msg.channel.sendMessage(`Volume: ${Math.round(dispatcher.volume*50)}%`);
+					dispatcher.setVolume(Math.min((dispatcher.volume*50 + (2*(m.content.split('+').length-1)))/50,2));
+					msg.channel.sendMessage(`Volume: ${Math.round(dispatcher.volume*50)}%`);
+				} else if (m.content.startsWith('volume-')){
+					if (Math.round(dispatcher.volume*50) <= 0) return msg.channel.sendMessage(`Volume: ${Math.round(dispatcher.volume*50)}%`);
+					dispatcher.setVolume(Math.max((dispatcher.volume*50 - (2*(m.content.split('-').length-1)))/50,0));
+					msg.channel.sendMessage(`Volume: ${Math.round(dispatcher.volume*50)}%`);
+				} else if (m.content.startsWith(token.prefix + 'time')){
+					msg.channel.sendMessage(`time: ${Math.floor(dispatcher.time / 60000)}:${Math.floor((dispatcher.time % 60000)/1000) <10 ? '0'+Math.floor((dispatcher.time % 60000)/1000) : Math.floor((dispatcher.time % 60000)/1000)}`);
+				}
+			});
+			dispatcher.on('end', () => {
+				collector.stop();
+				play(queue[msg.guild.id].songs.shift());
+			});
+			dispatcher.on('error', (err) => {
+				return msg.channel.sendMessage('error: ' + err).then(() => {
+					collector.stop();
+					play(queue[msg.guild.id].songs.shift());
+				});
+			});
+		})(queue[msg.guild.id].songs.shift());
+	},
+	'join': (msg) => {
+		return new Promise((resolve, reject) => {
+			const voiceChannel = msg.member.voiceChannel;
+			if (!voiceChannel || voiceChannel.type !== 'voice') return msg.reply('I couldn\'t connect to your voice channel...');
+			voiceChannel.join().then(connection => resolve(connection)).catch(err => reject(err));
+		});
+	},
+	'add': (msg) => {
+		let url = msg.content.split(' ')[1];
+		if (url == '' || url === undefined) return msg.channel.sendMessage(`You must add a YouTube video url, or id after ${token.prefix}add`);
+		yt.getInfo(url, (err, info) => {
+			if(err) return msg.channel.sendMessage('Invalid YouTube Link: ' + err);
+			if (!queue.hasOwnProperty(msg.guild.id)) queue[msg.guild.id] = {}, queue[msg.guild.id].playing = false, queue[msg.guild.id].songs = [];
+			queue[msg.guild.id].songs.push({url: url, title: info.title, requester: msg.author.username});
+			msg.channel.sendMessage(`added **${info.title}** to the queue`);
+		});
+	},
+	'queue': (msg) => {
+		if (queue[msg.guild.id] === undefined) return msg.channel.sendMessage(`Add some songs to the queue first with ${token.prefix}add`);
+		let tosend = [];
+		queue[msg.guild.id].songs.forEach((song, i) => { tosend.push(`${i+1}. ${song.title} - Requested by: ${song.requester}`);});
+		msg.channel.sendMessage(`__**${msg.guild.name}'s Music Queue:**__ Currently **${tosend.length}** songs queued ${(tosend.length > 15 ? '*[Only next 15 shown]*' : '')}\n\`\`\`${tosend.slice(0,15).join('\n')}\`\`\``);
+	},
+	'help': (msg) => {
+		let tosend = ['```xl', token.prefix + 'join : "Join Voice channel of msg sender"',	token.prefix + 'add : "Add a valid youtube link to the queue"', token.prefix + 'queue : "Shows the current queue, up to 15 songs shown."', token.prefix + 'play : "Play the music queue if already joined to a voice channel"', '', 'the following commands only function while the play command is running:'.toUpperCase(), token.prefix + 'pause : "pauses the music"',	token.prefix + 'resume : "resumes the music"', token.prefix + 'skip : "skips the playing song"', token.prefix + 'time : "Shows the playtime of the song."',	'volume+(+++) : "increases volume by 2%/+"',	'volume-(---) : "decreases volume by 2%/-"',	'```'];
+		msg.channel.sendMessage(tosend.join('\n'));
+	},
+	'reboot': (msg) => {
+		if (msg.author.id == token.adminID) process.exit(); //Requires a node module like Forever to work.
+	}
+};
+
+client.on('ready', () => {
+	console.log('ready!');
 });
-client.login(config.token);
+
+client.on('message', msg => {
+	if (!msg.content.startsWith(token.prefix)) return;
+	if (commands.hasOwnProperty(msg.content.toLowerCase().slice(token.prefix.length).split(' ')[0])) commands[msg.content.toLowerCase().slice(token.prefix.length).split(' ')[0]](msg);
+});
+});
+client.login(config.token);     
